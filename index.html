@@ -1,3 +1,4 @@
+html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,8 +59,8 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Dollar Printer</h1><p class="subtitle">Simple & Fast Copy Trading Tool for Deriv</p>
+  <header><h1>Dollar Printer</h1>
+    <p class="subtitle">Simple & Fast Copy Trading Tool for Deriv</p>
   </header>
   <main>
     <section>
@@ -80,11 +81,11 @@
   <script>
     const appId = 80365;
 
-  document.getElementById('connectBtn').addEventListener('click', () => {
-    const redirectUri = window.location.href;
-    const oauthUrl = `https://oauth.deriv.com/oauth2/authorize?app_id=appId   l=EN   brand=deriv   redirect_uri={encodeURIComponent(redirectUri)}`;
-    window.location.href = oauthUrl;
-  });
-</script>
+    document.getElementById('connectBtn').addEventListener('click', () => {
+      const redirectUri = encodeURIComponent(window.location.href);
+      const oauthUrl = `https://oauth.deriv.com/oauth2/authorize?app_id=appId   l=EN   brand=deriv   redirect_uri={redirectUri}`;
+      window.location.href = oauthUrl;
+    });
+  </script>
 </body>
-</html>
+    </html>
