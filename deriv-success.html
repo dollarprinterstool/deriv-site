@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Connected to Deriv</title>
+  <style>
+    body {
+      background-color: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .token-box {
+      background-color: #222;
+      padding: 20px;
+      border-radius: 10px;
+      word-break: break-all;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Connection Successful!</h1>
+  <p>Your Deriv account is now connected.</p>
+  <p><strong>Auth Token:</strong></p>
+  <div class="token-box" id="tokenBox">Loading...</div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const token = urlParams.get('token');
+
+    if (token) {
+      document.getElementById('tokenBox').textContent = token;
+      // You can now use the token to call Deriv API endpoints.
+      // Example: Store it in localStorage or send to your backend
+    } else {
+      document.getElementById('tokenBox').textContent = 'No token found.';
+    }
+  </script>
+</body>
+</html>
