@@ -2,23 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Connected to Deriv</title>
   <style>
-<script>
-  // Check for token in URL
-  const urlParams = new URLSearchParams(window.location.search);
-  const token = urlParams.get("token");
-
-  if (token) {
-    // Save token for reuse
-    localStorage.setItem("authToken", token);
-    alert("Login successful! Token saved.");
-    
-    // Optional: Redirect to a dashboard or load balance
-    // window.location.href = "/dashboard.html";
-  }
-</script>    body {
+    body {
       background-color: #111;
       color: white;
       font-family: Arial, sans-serif;
@@ -36,18 +23,18 @@
 </head>
 <body>
   <h1>Connection Successful!</h1>
-  <p>Your Deriv account is now connected.</p>
-  <p><strong>Auth Token:</strong></p>
+  <p>Your Deriv account is now connected.</p><p><strong>Auth Token:</strong></p>
   <div class="token-box" id="tokenBox">Loading...</div>
 
   <script>
     const urlParams = new URLSearchParams(window.location.search);
-    const token = urlParams.get('token');
+    const token = urlParams.get("token");
 
     if (token) {
-      document.getElementById('tokenBox').textContent = token
+      localStorage.setItem("authToken", token);
+      document.getElementById("tokenBox").textContent = token;
     } else {
-      document.getElementById('tokenBox').textContent = 'No token found.';
+      document.getElementById("tokenBox").textContent = "Token not found.";
     }
   </script>
 </body>
