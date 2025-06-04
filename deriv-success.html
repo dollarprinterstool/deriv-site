@@ -32,9 +32,7 @@
     const token = urlParams.get('token');
 
     if (token) {
-      document.getElementById('tokenBox').textContent = token;
-      // You can now use the token to call Deriv API endpoints.
-      // Example: Store it in localStorage or send to your backend
+      document.getElementById('tokenBox').textContent = token
     } else {
       document.getElementById('tokenBox').textContent = 'No token found.';
     }
