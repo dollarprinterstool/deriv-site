@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dollar Printer</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #1e1e1e;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      font-weight: bold;
+    }
+    p.subtitle {
+      margin-top: 8px;
+      font-weight: normal;
+      color: #cccccc;
+    }
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+    button {
+      background-color: #e74c4c;
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #d43c3c;
+    }
+    section {
+      margin-top: 40px;
+    }
+    footer {
+      background-color: #1e1e1e;
+      text-align: center;
+      padding: 15px;
+      color: #999999;position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dollar Printer</h1>
+    <p class="subtitle">Simple & Fast Copy Trading Tool for Deriv</p>
+  </header>
+  <main>
+    <section>
+      <h2>Start Copy Trading</h2>
+      <p>Connect your Deriv account and start copying trades instantly.</p>
+      <button id="connectBtn">Connect to Deriv</button>
+    </section>
+
+    <section>
+      <h2>Why Choose Us</h2>
+      <p>Secure. Fast. Trusted.</p>
+    </section>
+  </main>
+  <footer>
+    © 2025 Dollar Printer. All rights reserved.
+  </footer>
+
+  <script>
+    const appId = 80342;
+
+    document.getElementById('connectBtn').addEventListener('click', () => {
+      const redirectUri = window.location.href;
+      const oauthUrl = `https://oauth.deriv.com/oauth2/authorize?app_id=appId   l=EN   brand=deriv   redirect_uri={encodeURIComponent(redirectUri)}`;
+      window.location.href = oauthUrl;
+    });
+  </script>
+</body>
+</html>
+```
