@@ -5,7 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Connected to Deriv</title>
   <style>
-    body {
+<script>
+  // Check for token in URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const token = urlParams.get("token");
+
+  if (token) {
+    // Save token for reuse
+    localStorage.setItem("authToken", token);
+    alert("Login successful! Token saved.");
+    
+    // Optional: Redirect to a dashboard or load balance
+    // window.location.href = "/dashboard.html";
+  }
+</script>    body {
       background-color: #111;
       color: white;
       font-family: Arial, sans-serif;
