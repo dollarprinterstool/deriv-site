@@ -2,89 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dollar Printer</title>
   <style>
     body {
-      background-color: #121212;
-      color: white;
+      margin: 0;
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
+      background-color: #111;
+      color: #fff;
     }
-    header {
-      background-color: #1e1e1e;
+    header, footer {
+      background-color: #222;
       padding: 20px;
       text-align: center;
     }
-    h1 {
-      margin: 0;
-      font-weight: bold;
-    }
-    p.subtitle {
-      margin-top: 8px;
-      font-weight: normal;
-      color: #cccccc;
-    }
-    main {
-      padding: 20px;
+    .section {
+      padding: 40px 20px;
       text-align: center;
     }
-    button {
-      background-color: #e74c4c;
+    .btn {
+      background-color: #ff4d4f;
+      color: #fff;
       border: none;
-      color: white;
       padding: 12px 24px;
+      margin-top: 20px;
       font-size: 16px;
-      border-radius: 6px;
       cursor: pointer;
-      margin-top: 10px;
+      border-radius: 4px;
     }
-    button:hover {
-      background-color: #d43c3c;
-    }
-    section {
-      margin-top: 40px;
-    }
-    footer {
-      background-color: #1e1e1e;
-      text-align: center;
-      padding: 15px;
-      color: #999999;
-      position: fixed;
-      width: 100%;
-      bottom: 0;
+    .btn:hover {
+      background-color: #e64545;
     }
   </style>
 </head>
 <body>
-  <header><h1>Dollar Printer</h1>
-    <p class="subtitle">Simple & Fast Copy Trading Tool for Deriv</p>
+  <header>
+    <h1>Dollar Printer</h1>
+    <p>Simple & Fast Copy Trading Tool for Deriv</p>
   </header>
-  <main>
-    <section>
-      <h2>Start Copy Trading</h2>
-      <p>Connect your Deriv account and start copying trades instantly.</p>
-      <button id="connectBtn">Connect to Deriv</button>
-    </section>
 
-    <section>
-      <h2>Why Choose Us</h2>
-      <p>Secure. Fast. Trusted.</p>
-    </section>
-  </main>
+  <div class="section">
+    <h2>Start Copy Trading</h2>
+    <p>Connect your Deriv account and start copying trades instantly.</p>
+    <button class="btn" onclick="connectToDeriv()">Connect to Deriv</button>
+  </div><div class="section">
+    <h2>Why Choose Us</h2>
+    <p>Secure. Fast. Trusted.</p>
+  </div>
+
   <footer>
-    © 2025 Dollar Printer. All rights reserved.
+    <p>© 2025 Dollar Printer. All rights reserved.</p>
   </footer>
 
   <script>
     const appId = 80373;
+    function connectToDeriv() {
+      const redirectUri = window.location.href;
+      const loginUrl = `https://oauth.deriv.com/oauth2/authorize?app_id=appId   redirect_uri={redirectUri}`;
+      window.location.href = loginUrl;
+    }
 
-    document.getElementById('connectBtn').addEventListener('click', () => {
-      const redirectUri = encodeURIComponent(window.location.href);
-      const oauthUrl = `https://oauth.deriv.com/oauth2/authorize?app_id=appId   l=EN   brand=deriv   redirect_uri={redirectUri}`;
-      window.location.href = oauthUrl;
-    });
+    const urlParams = new URLSearchParams(window.location.search);
+    const token = urlParams.get("token");
+    if (token) {
+      localStorage.setItem("deriv_token", token);
+      alert("Deriv token saved!");
+    }
   </script>
 </body>
 </html>
