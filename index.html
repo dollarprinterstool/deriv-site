@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dollar Printer</title>
   <style>
     body {
@@ -11,20 +11,6 @@
       background-color: #111;
       color: #fff;
       text-align: center;
-    }
-    header {
-      background-color: #222;
-      padding: 40px 20px;
-    }
-    h1 {
-      font-size: 36px;
-      margin: 0;
-    }
-    p {
-      font-size: 18px;
-      margin: 10px 0;
-    }
-    section {
       padding: 40px 20px;
     }
     .btn {
@@ -33,35 +19,30 @@
       padding: 12px 24px;
       text-decoration: none;
       border-radius: 6px;
+      font-size: 16px;
       display: inline-block;
       margin-top: 20px;
-      font-size: 16px;
-    }
-    footer {
-      background-color: #222;
-      padding: 20px;
-      font-size: 14px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Dollar Printer</h1>
-    <p>Simple & Fast Copy Trading Tool for Deriv</p>
-  </header>
+  <h1>Dollar Printer</h1>
+  <p>Simple & Fast Copy Trading Tool for Deriv</p>
 
-  <section>
-    <h2>Start Copy Trading</h2>
-    <p>Connect your Deriv account and start copying trades instantly.</p><a href="https://oauth.deriv.com/oauth2/authorize?app_id=80373" class="btn">Connect to Deriv</a>
-  </section>
+  <h2>Start Copy Trading</h2>
+  <p>Connect your Deriv account and start copying trades instantly.</p>
 
-  <section>
-    <h2>Why Choose Us</h2>
-    <p>Secure. Fast. Trusted.</p>
-  </section>
+  <a
+    class="btn"
+    href="https://oauth.deriv.com/oauth2/authorize?app_id=80373&redirect_uri=https%3A%2F%2Fdollarprinterstool.github.io%2Fconnected.html&response_type=token"
+  >
+    Connect to Deriv
+  </a>
 
-  <footer>
-    Dollar Printer. All rights reserved.
+  <h2>Why Choose Us</h2>
+  <p>Secure. Fast. Trusted.</p>
+
+  <footer style="margin-top: 40px; font-size: 14px; color: #888;">Dollar Printer. All rights reserved.
   </footer>
 </body>
 </html>
