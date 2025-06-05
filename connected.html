@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Connected to Deriv</title>
   <style>
     body {
@@ -16,7 +16,7 @@
       background-color: #222;
       padding: 20px;
       border-radius: 10px;
-      word-break: break-word;
+      word-break: break-all;
       margin-top: 20px;
       font-family: monospace;
     }
@@ -29,11 +29,12 @@
 
   <script>
     const hashParams = new URLSearchParams(window.location.hash.substring(1));
-    const token = hashParams.get("token");if (token) {
+    const token = hashParams.get("token");
+
+    if (token) {
       localStorage.setItem("authToken", token);
       document.getElementById("tokenBox").textContent = token;
-      document.getElementById("statusHeading").textContent = "Connection Successful!";
-      document.getElementById("statusText").textContent = "Your Deriv account is now connected.";
+      document.getElementById("statusHeading").textContent = "Connection Successful!";document.getElementById("statusText").textContent = "Your Deriv account is now connected.";
     } else {
       document.getElementById("tokenBox").textContent = "Token not found.";
       document.getElementById("statusHeading").textContent = "Connection Failed!";
