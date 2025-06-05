@@ -1,45 +1,103 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Connected to Deriv</title>
-  <style>
-    body {
-      background-color: #111;
-      color: white;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 40px 20px;
-    }
-    .token-box {
-      background-color: #222;
-      padding: 20px;
-      border-radius: 10px;
-      word-break: break-all;
-      margin-top: 20px;
-      font-family: monospace;
-    }
-  </style>
-</head>
-<body>
-  <h1 id="statusHeading">Connecting...</h1>
-  <p id="statusText">Please wait while we verify your token.</p>
-  <div class="token-box" id="tokenBox">Loading...</div>
+return (
+    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md mx-auto">
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-2xl font-bold">Fake Money Generator</CardTitle>
+            <CardDescription>
+              Create custom fake money bills for fun and games
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div className="space-y-2">
+              <Label htmlFor="denomination">Bill Denomination</Label>
+              <div className="flex flex-wrap gap-2">
+                {denominations.map((value) => (
+                  <Button
+                    key={value}
+                    variant={denomination === value ? 'default' : 'outline'}
+                    onClick={() => setDenomination(value)}
+                  >
+                    ${value}
+                  </Button>
+                ))}import { useState } from 'react'
+import { Button } from "/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "/components/ui/card"
+import { Input } from "/components/ui/input"
+import { Label } from "/components/ui/label"
+import { Download } from 'lucide-react'
 
-  <script>
-    const hashParams = new URLSearchParams(window.location.hash.substring(1));
-    const token = hashParams.get("token");
+export default function FakeMoneyGenerator() {
+  const [denomination, setDenomination] = useState('100')
+  const [generatedImage, setGeneratedImage] = useState<string | null>(null)
+  const [isGenerating, setIsGenerating] = useState(false)
 
-    if (token) {
-      localStorage.setItem("authToken", token);
-      document.getElementById("tokenBox").textContent = token;
-      document.getElementById("statusHeading").textContent = "Connection Successful!";document.getElementById("statusText").textContent = "Your Deriv account is now connected.";
-    } else {
-      document.getElementById("tokenBox").textContent = "Token not found.";
-      document.getElementById("statusHeading").textContent = "Connection Failed!";
-      document.getElementById("statusText").textContent = "Unable to retrieve your token.";
-    }
-  </script>
-</body>
-</html>
+  const denominations = ['1', '5', '10', '20', '50', '100', '500', '1000']
+
+  const generateMoney = () => {
+    setIsGenerating(true)
+    
+    // Simulate image generation with a placeholder
+    setTimeout(() => {
+      setGeneratedImage(`https://placehold.co/600x300/efefef/000?text=$${denomination}%20Bill`)
+      setIsGenerating(false)
+    }, 800)
+  }const downloadImage = () => {
+    if (!generatedImage) return
+    
+    const link = document.createElement('a')
+    link.href = generatedImage
+    link.download = `fake-money-${denomination}.png`
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }</div>
+              <div className="pt-2">
+                <Label htmlFor="custom-denomination">Or enter custom amount</Label>
+                <div className="flex items-center gap-2">
+                  <span className="text-lg font-medium">$</span>
+                  <Input
+                    id="custom-denomination"
+                    type="number"
+                    value={denomination}
+                    onChange={(e) => setDenomination(e.target.value)}
+                    min="1"
+                  />
+                </div>
+              </div>
+            </div><div className="flex justify-center">
+              <Button 
+                onClick={generateMoney}
+                disabled={isGenerating}
+              >
+                {isGenerating ? 'Generating...' : 'Generate Fake Money'}
+              </Button>
+            </div>
+
+            {generatedImage && (
+              <div className="space-y-4">
+                <div className="border-2 border-dashed border-gray-300 rounded-lg overflow-hidden">
+                  <img 
+                    src={generatedImage} 
+                    alt={`Fake $${denomination} bill`}
+                    className="w-full h-auto"
+                  />
+                </div>
+                <Button 
+                  onClick={downloadImage}
+                  className="w-full"
+                ><Download className="mr-2 h-4 w-4" />
+                  Download Image
+                </Button>
+              </div>
+            )}
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  )
+}
+Share
+Refresh
+
+Version
