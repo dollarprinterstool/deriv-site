@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connecting...</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #001144;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .dollar {
+      position: absolute;
+      width: 50px;
+      animation: fall 5s linear infinite;
+      opacity: 0.7;
+    }
+    @keyframes fall {
+      0% {top: -50px;}
+      100% {top: 100vh;}
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    .progress-bar {
+      width: 80%;
+      height: 10px;
+      background: #555;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+    .progress {
+      height: 100%;
+      width: 0%;
+      background: #00f0ff;
+      transition: width 1s linear;
+    }
+  </style>
+</head>
+<body>
+  <h1>Connecting to Dashboard...</h1><div class="progress-bar"><div class="progress" id="progress"></div></div>
+
+  <script>
+    let progress = document.getElementById("progress");
+    let percent = 0;
+    const interval = setInterval(() => {
+      percent += 10;
+      progress.style.width = percent + "%";
+      if (percent >= 100) {
+        clearInterval(interval);
+        window.location.href = "dashboard.html";
+      }
+    }, 1000);
+
+    // Create falling dollars
+    for (let i = 0; i < 20; i++) {
+      let img = document.createElement("img");
+      img.src = "https://upload.wikimedia.org/wikipedia/commons/3/39/Dollar_sign.svg";
+      img.className = "dollar";
+      img.style.left = Math.random() * 100 + "vw";
+      img.style.animationDuration = (Math.random() * 3 + 2) + "s";
+      document.body.appendChild(img);
+    }
+  </script>
+</body>
+</html>
