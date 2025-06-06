@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dollar Printers - Connect to Deriv</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #1e40af, #2563eb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #cbd5e1;
+  }
+
+  .card {
+    background: #1e3a72;
+    border-radius: 20px;
+    padding: 40px 50px;
+    width: 320px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+  }
+
+  .logo-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+
+  .logo-wrapper .dollar {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 150px;
+    color: #ffd700cc;
+    font-weight: 900;
+    font-family: 'Arial Black', Arial, sans-serif;
+    user-select: none;
+    pointer-events: none;
+    z-index: 0;filter: drop-shadow(0 0 6px #ffd700cc);
+  }
+
+  .logo-wrapper h1 {
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    color: #60a5fa;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+  }
+
+  .subtitle1 {
+    font-weight: 600;
+    font-size: 20px;
+    margin: 5px 0 10px;
+    color: #e0e7ff;
+  }
+
+  .subtitle2 {
+    font-style: italic;
+    font-weight: 500;
+    font-size: 13px;
+    margin-bottom: 30px;
+    color: #a5b4fc;
+  }
+
+  .connect-btn {
+    background: #2563eb;
+    color: #fff;
+    font-weight: 700;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 25px;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+
+  .connect-btn:hover {
+    background: #1e40af;
+  }
+
+  .button-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    background: #60a5fa;
+    border-radius: 10px;
+    padding: 12px 0;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    user-select: none;
+  }
+
+  .btn:hover {
+    background: #2563eb;
+  }
+
+  .progress-container {
+    height: 8px;
+    background: #334155;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 12px;
+  }.progress-bar {
+    height: 8px;
+    width: 50%;
+    background: #60a5fa;
+    animation: progressAnim 2s infinite alternate ease-in-out;
+    border-radius: 8px;
+  }
+
+  @keyframes progressAnim {
+    0% { width: 10%; }
+    100% { width: 90%; }
+  }
+
+  .footer {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 25px;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <button class="connect-btn" onclick="window.location.href='https://oauth.deriv.com/oauth2/authorize?app_id=80373&redirect_uri=https://dollarprinterstool.github.io/deriv-site/connected.html&response_type=token'">
+      Connect to Deriv
+    </button>
+
+    <div class="logo-wrapper">
+      <span class="dollar">$</span>
+      <h1>DERIV</h1>
+    </div>
+    <div class="subtitle1">Dollar Printers</div>
+    <div class="subtitle2">Automated Precision Trading System</div>
+
+    <div class="button-grid">
+      <div class="btn">Free Bots</div>
+      <div class="btn">AI Bots</div>
+      <div class="btn">Analysis Tool</div>
+      <div class="btn">Smart Analysis</div>
+      <div class="btn">Copy Trading</div>
+      <div class="btn">Signals</div>
+    </div>
+
+    <div class="progress-container" aria-label="Syncing strategies progress bar">
+      <div class="progress-bar"></div>
+    </div><div style="margin-top:8px; font-style: italic; color:#a5b4fc;">Syncing strategies...</div>
+
+    <div class="footer">©Dollar Printers. Powered by DERIV.</div>
+  </div>
+</body>
+      </html>
