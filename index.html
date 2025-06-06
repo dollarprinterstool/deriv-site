@@ -1,44 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dollar Printer Tool</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dollar Printers</title>
+  <style>
+    body {
+      background: #f9f9f9;
+      color: #333;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .container {
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: bold;
+      color: #2b2b2b;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      background: #ffd700;
+      color: #111;
+      padding: 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #ffc800;
+    }
+
+    .progress-text {
+      margin-top: 20px;
+      font-style: italic;
+      color: #555;
+    }.progress-bar {
+      width: 100%;
+      background: #ddd;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 10px;
+      height: 14px;
+    }
+
+    .progress-fill {
+      width: 36%;
+      height: 100%;
+      background: #ffd700;
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 12px;
+      color: #aaa;
+    }
+  </style>
 </head>
-
 <body>
-    <header>
-        <h1>Dollar Printer Tool</h1>
-        <p>Your gateway to Deriv third-party integrations</p>
-    </header>
 
-    <main>
-        <section id="about">
-            <h2>About</h2>
-            <p>The Dollar Printer Tool connects users to the Deriv platform, offering tools to monitor and optimize trades with seamless third-party integration support.</p>
-        </section>
+  <div class="container">
+    <div class="logo">Dollar Printers</div>
+    <div class="subtitle">Automated Precision Trading System</div>
 
-        <section id="features">
-            <h2>Features</h2>
-            <ul>
-                <li>Real-time trade tracking</li>
-                <li>Custom integration with Deriv APIs</li>
-                <li>User analytics and insights</li>
-                <li>Secure login and data handling</li>
-            </ul>
-        </section>
+    <div class="buttons">
+      <a href="#" class="btn">Free Bots</a>
+      <a href="#" class="btn">AI Bots</a>
+      <a href="#" class="btn">Analysis Tool</a>
+      <a href="#" class="btn">Smart Analysis</a>
+      <a href="#" class="btn">Copy Trading</a>
+      <a href="#" class="btn">Signals</a>
+    </div>
 
-        <section id="cta">
-            <h2>Get Started</h2>
-            <a href="#" class="btn">Connect to Deriv</a>
-        </section>
-    </main>
+    <div class="progress-text">Syncing strategies…</div>
+    <div class="progress-bar">
+      <div class="progress-fill"></div>
+    </div>
+  </div>
 
-    <footer>
-        <p>&copy; 2025 Dollar Printer Tool. All rights reserved.</p>
-    </footer>
+  <footer>
+    ©💵 Dollar Printers. Powered by Deriv.*TRUST THE PROCESS*
+  </footer>
+
 </body>
-
-</html>
+    </html>
