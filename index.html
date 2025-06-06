@@ -1,165 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Dollar Printers</title>
-<style>
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #0e2a65, #1a4cab);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  #container {
-    background: #142d6f;
-    border-radius: 20px;
-    padding: 25px;
-    width: 320px;
-    text-align: center;
-    color: #aac4ff;
-    position: relative;
-  }
-  #logo-wrapper {
-    position: relative;
-    margin-bottom: 15px;
-  }
-  #dollar {
-    font-size: 90px;
-    color: #ffdd00;
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-    filter: drop-shadow(0 0 8px #ffdd00);
-    z-index: 0;
-    user-select: none;
-  }
-  #logo-text {
-    font-weight: 700;
-    font-size: 40px;letter-spacing: 4px;
-    color: #6699ff;
-    position: relative;
-    z-index: 1;
-  }
-  #subtitle {
-    font-style: italic;
-    font-size: 14px;
-    margin-bottom: 20px;
-    color: #c2d0ffcc;
-  }
-  .btn-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-  }
-  button {
-    background-color: #668dff;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    font-weight: 600;
-    padding: 12px 0;
-    cursor: pointer;
-    user-select: none;
-    transition: background-color 0.3s;
-  }
-  button:hover {
-    background-color: #5474e8;
-  }
-  #sync-text {
-    margin-top: 20px;
-    font-style: italic;
-    font-size: 13px;
-    color: #a1b4ff;
-  }
-  #progress-bar {
-    height: 6px;
-    width: 100%;
-    background: #2e3a78;
-    border-radius: 3px;
-    margin-top: 8px;
-    overflow: hidden;
-  }
-  #progress {
-    background-color: #668dff;
-    width: 0%;
-    height: 100%;
-    transition: width 0.3s ease;
-  }
-  #connect-button {
-    margin-top: 20px;
-    background-color: #4a78ff;
-    font-weight: 700;
-    padding: 12px 0;
-    border-radius: 8px;
-    color: white;
-    cursor: pointer;
-    display: none;
-  }
-  #countdown {
-    margin-top: 15px;
-    font-weight: 600;
-    color: #ffdd00;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dollar Printer</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #0f172a, #1e3a8a);
+      color: #f8fafc;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .logo {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #60a5fa;
+    }
+    .subtitle {
+      font-size: 18px;
+      color: #cbd5e1;
+      margin-bottom: 40px;
+    }
+    .btn {
+      background-color: #3b82f6;
+      color: white;
+      padding: 14px 30px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #2563eb;
+    }
+    footer {
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-  <div id="container"><div id="logo-wrapper">
-      <div id="dollar"></div>
-      <div id="logo-text">DERIV</div>
-    </div>
-    <div style="font-weight: 600; margin-bottom: 5px; color: white;">Dollar Printers</div>
-    <div id="subtitle">Automated Precision Trading System</div>
-
-    <div class="btn-grid">
-      <button>Free Bots</button>
-      <button>AI Bots</button>
-      <button>Analysis Tool</button>
-      <button>Smart Analysis</button>
-      <button>Copy Trading</button>
-      <button>Signals</button>
-    </div>
-
-    <div id="sync-text">Syncing strategies...</div>
-    <div id="progress-bar"><div id="progress"></div></div>
-
-    <div id="countdown"></div>
-
-    <button id="connect-button">Connect to Deriv</button>
-  </div>
-
-  <script>
-    const progress = document.getElementById('progress');
-    const countdownEl = document.getElementById('countdown');
-    const connectBtn = document.getElementById('connect-button');
-
-    let count = 10;
-    countdownEl.textContent = `Connecting in{count} seconds...`;
-
-    let progressInterval = setInterval(() => {
-      let currentWidth = parseFloat(progress.style.width) || 0;
-      if(currentWidth >= 100) clearInterval(progressInterval);
-      else progress.style.width = currentWidth + 10 + '%';
-    }, 1000);
-
-    let countdownInterval = setInterval(() => {count--;
-      if(count > 0) {
-        countdownEl.textContent = `Connecting in ${count} seconds...`;
-      } else {
-        clearInterval(countdownInterval);
-        countdownEl.textContent = '';
-        connectBtn.style.display = 'block';
-      }
-    }, 1000);
-
-    connectBtn.addEventListener('click', () => {
-      // Redirect to your dashboard first
-      window.location.href = 'dashboard.html';  // Adjust if your dashboard URL differs
-    });
-  </script>
+  <div class="logo">Dollar Printer</div><p class="subtitle">Simple & Secure Copy Trading for Deriv</p>
+  <a class="btn" href="https://oauth.deriv.com/oauth2/authorize?app_id=80373&redirect_uri=https://dollarprinterstool.github.io/deriv-site/connected.html&response_type=token">Connect to Deriv</a>
+  <footer>©Dollar Printer. All rights reserved.</footer>
 </body>
 </html>
