@@ -1,293 +1,107 @@
-element.style {
-}
-:root {
-    --bg-color: #fff;
-    --text-color: #000;
-    --card-bg-color: #f9f9f9;
-    --border-color: #ddd;
-    --header-bg-color: #eaeaea;
-    --highlight-color: #007bff;
-}
-
-:root {
-    --brand-secondary: #85acb0;
-    --border-normal: #d6dadb;
-    --gneral-main-1: #fff;
-    --text-loss-danger: #ec3f3f;
-}
-:host, :root {
-    --du-text-size-3xs: 6px;
-    --du-text-size-2xs: 8px;
-    --du-text-size-xs: 10px;
-    --du-text-size-sm: 12px;
-    --du-text-size-default: 14px;
-    --du-text-size-md: 16px;
-    --du-text-size-lg: 28px;
-    --du-text-size-xl: 30px;
-    --du-text-size-2xl: 32px;
-    --du-text-lh-2xs: 1;
-    --du-text-lh-xs: 1.25;
-    --du-text-lh-sm: 1.4;
-    --du-text-lh-md: 1.5;
-    --du-text-lh-lg: 1.75;
-    --du-text-lh-xl: 2;
-    --du-text-lh-2xl: 2.4;
-    --du-text-weight-light: 300;
-    --du-text-weight-normal: 400;
-    --du-text-weight-semibold: 500;
-    --du-text-weight-bold: 700;
-    --du-text-align-left: start;
-    --du-text-align-right: right;
-    --du-text-align-center: center;
-    --du-brand-white: #fff;
-    --du-brand-dark-gray: #0e0e0e;
-    --du-brand-red-coral: #ff444f;
-    --du-brand-orange: #ff6444;
-    --du-brand-secondary: #85acb0;
-    --du-deriv-airtm: linear-gradient(90deg, #1a8fff 0%, #0083ff 100%);
-    --du-deriv-banxa: linear-gradient(90deg, #000 0%, #4ac0ba 96.35%);
-    --du-deriv-bitcoin: linear-gradient(90deg, #f89e32 0%, #f7931b 103.12%);
-    --du-deriv-credit: linear-gradient(274.73deg, #464750 3.82%, #0e0f11 88.49%);
-    --du-deriv-dp2p: linear-gradient(90deg, #ff444f 0%, #211d1e 95.22%);
-    --du-deriv-fasapay: linear-gradient(90deg, #f6931c 0%, #4873ac 95.22%);
-    --du-deriv-jeton: linear-gradient(90deg, #ff7635 0%, #ff671f 100%);
-    --du-deriv-mastercard: linear-gradient(90deg, #eb001b 0%, #f79e1b 100%);
-    --du-deriv-neteller: linear-gradient(90deg, #98cc53 0%, #8dc640 100%);
-    --du-deriv-paylivre: linear-gradient(90deg, #352caa 0%, #9a6bfc 100%);
-    --du-deriv-paysafe: linear-gradient(90deg, #e3001b 0%, #008ac9 100%);
-    --du-deriv-perfectmoney: gradient-perfectmoney;
-    --du-deriv-skrill: linear-gradient(274.73deg, #5a205d 3.82%, #7f3883 88.49%);
-    --du-deriv-sticpay: linear-gradient(90deg, #f36938 0%, #f25822 100%);
-    --du-deriv-virtual: linear-gradient(274.25deg, #333 9.01%, #5c5b5b 103.31%);
-    --du-deriv-visa: linear-gradient(274.73deg, #1a205e 3.82%, #122d96 88.49%);
-    --du-deriv-webmoney: linear-gradient(90deg, #1a77ac 0%, #0068a3 100%);
-    --du-app-card-virtual: linear-gradient(274.25deg, #333 9.01%, #5c5b5b 103.31%);
-    --du-app-card-virtual-swap-free: linear-gradient(58.51deg, #061828 28.06%, #1a3c60 93.51%);
-}
-:host, :root {
-    --du-text-size-3xs: 6px;
-    --du-text-size-2xs: 8px;
-    --du-text-size-xs: 10px;
-    --du-text-size-sm: 12px;
-    --du-text-size-default: 14px;
-    --du-text-size-md: 16px;
-    --du-text-size-lg: 28px;
-    --du-text-size-xl: 30px;
-    --du-text-size-2xl: 32px;
-    --du-text-lh-2xs: 1;
-    --du-text-lh-xs: 1.25;
-    --du-text-lh-sm: 1.4;
-    --du-text-lh-md: 1.5;
-    --du-text-lh-lg: 1.75;
-    --du-text-lh-xl: 2;
-    --du-text-lh-2xl: 2.4;
-    --du-text-weight-light: 300;
-    --du-text-weight-normal: 400;
-    --du-text-weight-semibold: 500;
-    --du-text-weight-bold: 700;
-    --du-text-align-left: start;
-    --du-text-align-right: right;
-    --du-text-align-center: center;
-    --du-brand-white: #fff;
-    --du-brand-dark-gray: #0e0e0e;
-    --du-brand-red-coral: #ff444f;
-    --du-brand-orange: #ff6444;
-    --du-brand-secondary: #85acb0;
-    --du-deriv-airtm: linear-gradient(90deg, #1a8fff 0%, #0083ff 100%);
-    --du-deriv-banxa: linear-gradient(90deg, #000 0%, #4ac0ba 96.35%);
-    --du-deriv-bitcoin: linear-gradient(90deg, #f89e32 0%, #f7931b 103.12%);
-    --du-deriv-credit: linear-gradient(274.73deg, #464750 3.82%, #0e0f11 88.49%);
-    --du-deriv-dp2p: linear-gradient(90deg, #ff444f 0%, #211d1e 95.22%);
-    --du-deriv-fasapay: linear-gradient(90deg, #f6931c 0%, #4873ac 95.22%);
-    --du-deriv-jeton: linear-gradient(90deg, #ff7635 0%, #ff671f 100%);
-    --du-deriv-mastercard: linear-gradient(90deg, #eb001b 0%, #f79e1b 100%);
-    --du-deriv-neteller: linear-gradient(90deg, #98cc53 0%, #8dc640 100%);
-    --du-deriv-paylivre: linear-gradient(90deg, #352caa 0%, #9a6bfc 100%);
-    --du-deriv-paysafe: linear-gradient(90deg, #e3001b 0%, #008ac9 100%);
-    --du-deriv-perfectmoney: gradient-perfectmoney;
-    --du-deriv-skrill: linear-gradient(274.73deg, #5a205d 3.82%, #7f3883 88.49%);
-    --du-deriv-sticpay: linear-gradient(90deg, #f36938 0%, #f25822 100%);
-    --du-deriv-virtual: linear-gradient(274.25deg, #333 9.01%, #5c5b5b 103.31%);
-    --du-deriv-visa: linear-gradient(274.73deg, #1a205e 3.82%, #122d96 88.49%);
-    --du-deriv-webmoney: linear-gradient(90deg, #1a77ac 0%, #0068a3 100%);
-    --du-app-card-virtual: linear-gradient(274.25deg, #333 9.01%, #5c5b5b 103.31%);
-    --du-app-card-virtual-swap-free: linear-gradient(58.51deg, #061828 28.06%, #1a3c60 93.51%);
-}
-:host, :root {
-    --text-size-xxxxs: .8rem;
-    --text-size-xxxs: 1rem;
-    --text-size-xxs: 1.2rem;
-    --text-size-xs: 1.4rem;
-    --text-size-s: 1.6rem;
-    --text-size-xsm: 1.8rem;
-    --text-size-sm: 2rem;
-    --text-size-m: 2.4rem;
-    --text-size-l: 3.2rem;
-    --text-size-xl: 4.8rem;
-    --text-size-xxl: 6.4rem;
-    --text-lh-xxs: 1;
-    --text-lh-xs: 1.25;
-    --text-lh-s: 1.4;
-    --text-lh-m: 1.5;
-    --text-lh-l: 1.75;
-    --text-lh-xl: 2;
-    --text-lh-xxl: 2.4;
-    --text-weight-lighter: lighter;
-    --text-weight-normal: normal;
-    --text-weight-bold: bold;
-    --text-weight-bolder: bolder;
-    --text-align-left: start;
-    --text-align-right: right;
-    --text-align-center: center;
-    --brand-white: #fff;
-    --brand-dark-grey: #0e0e0e;
-    --brand-red-coral: #ff444f;
-    --brand-orange: #ff6444;
-    --brand-purple-coral: var(--dynamic-list-bg, #191970);
-    --brand-blue-coral: #51d5ec;
-    --brand-secondary: #85acb0;
-    --app-card-virtual: linear-gradient(274.25deg, #333 9.01%, #5c5b5b 103.31%);
-    --app-card-virtual-swap-free: linear-gradient(58.51deg, #061828 28.06%, #1a3c60 93.51%);
-    --tw-border-opacity: 1;
-}
-:root {
-    --button-primary-default: #ff444f;
-    --text-colored-background: #fff;
-    --button-primary-hover: #eb3e48;
-    --button-secondary-default: #6e6e6e;
-}
-:host, :root {
-    --du-text-size-3xs: 6px;
-    --du-text-size-2xs: 8px;
-    --du-text-size-xs: 10px;
-    --du-text-size-sm: 12px;
-    --du-text-size-default: 14px;
-    --du-text-size-md: 16px;
-    --du-text-size-lg: 28px;
-    --du-text-size-xl: 30px;
-    --du-text-size-2xl: 32px;
-    --du-text-lh-2xs: 1;
-    --du-text-lh-xs: 1.25;
-    --du-text-lh-sm: 1.4;
-    --du-text-lh-md: 1.5;
-    --du-text-lh-lg: 1.75;
-    --du-text-lh-xl: 2;
-    --du-text-lh-2xl: 2.4;
-    --du-text-weight-light: 300;
-    --du-text-weight-normal: 400;
-    --du-text-weight-semibold: 500;
-    --du-text-weight-bold: 700;
-    --du-text-align-left: start;
-    --du-text-align-right: right;
-    --du-text-align-center: center;
-    --du-brand-white: #fff;
-    --du-brand-dark-gray: #0e0e0e;
-    --du-brand-red-coral: #ff444f;
-    --du-brand-orange: #ff6444;
-    --du-brand-secondary: #85acb0;
-    --du-deriv-airtm: linear-gradient(90deg, #1a8fff 0%, #0083ff 100%);
-    --du-deriv-banxa: linear-gradient(90deg, #000 0%, #4ac0ba 96.35%);
-    --du-deriv-bitcoin: linear-gradient(90deg, #f89e32 0%, #f7931b 103.12%);
-    --du-deriv-credit: linear-gradient(274.73deg, #464750 3.82%, #0e0f11 88.49%);
-    --du-deriv-dp2p: linear-gradient(90deg, #ff444f 0%, #211d1e 95.22%);
-    --du-deriv-fasapay: linear-gradient(90deg, #f6931c 0%, #4873ac 95.22%);
-    --du-deriv-jeton: linear-gradient(90deg, #ff7635 0%, #ff671f 100%);
-    --du-deriv-mastercard: linear-gradient(90deg, #eb001b 0%, #f79e1b 100%);
-    --du-deriv-neteller: linear-gradient(90deg, #98cc53 0%, #8dc640 100%);
-    --du-deriv-paylivre: linear-gradient(90deg, #352caa 0%, #9a6bfc 100%);
-    --du-deriv-paysafe: linear-gradient(90deg, #e3001b 0%, #008ac9 100%);
-    --du-deriv-perfectmoney: gradient-perfectmoney;
-    --du-deriv-skrill: linear-gradient(274.73deg, #5a205d 3.82%, #7f3883 88.49%);
-    --du-deriv-sticpay: linear-gradient(90deg, #f36938 0%, #f25822 100%);
-    --du-deriv-virtual: linear-gradient(274.25deg, #333 9.01%, #5c5b5b 103.31%);
-    --du-deriv-visa: linear-gradient(274.73deg, #1a205e 3.82%, #122d96 88.49%);
-    --du-deriv-webmoney: linear-gradient(90deg, #1a77ac 0%, #0068a3 100%);
-    --du-app-card-virtual: linear-gradient(274.25deg, #333 9.01%, #5c5b5b 103.31%);
-    --du-app-card-virtual-swap-free: linear-gradient(58.51deg, #061828 28.06%, #1a3c60 93.51%);
-}
-:root {
-    font-size: 62.5%;
-}
-html {
-    font-family: IBM Plex Sans, sans-serif;
-}
-html {
-    -moz-text-size-adjust: none;
-    text-size-adjust: none;
-}
-html {
-    font-family: IBM Plex Sans, sans-serif;
-}
-html {
-    -moz-text-size-adjust: none;
-    text-size-adjust: none;
-}
-html {
-    font-family: IBM Plex Sans, sans-serif;
-}
-html {
-    -moz-text-size-adjust: none;
-    text-size-adjust: none;
-}
-*, :before, :after {
-    box-sizing: border-box;
-}
-*, :before, :after {
-    box-sizing: border-box;
-}
-*, :before, :after {
-    box-sizing: border-box;
-}
-html[Attributes Style] {
-    -webkit-locale: "en";
-    unicode-bidi: isolate;
-}
-user agent stylesheet
-[dir="auto" i] {
-    unicode-bidi: isolate;
-}
-user agent stylesheet
-:root {
-    view-transition-name: root;
-}
-user agent stylesheet
-html {
-    display: block;
-}
-*, :before, :after {
-    box-sizing: border-box;
-}
-*, :before, :after {
-    box-sizing: border-box;
-}
-*, :before, :after {
-    box-sizing: border-box;
-}
-*, :before, :after {
-    box-sizing: border-box;
-}
-*, :before, :after {
-    box-sizing: border-box;
-}
-*, :before, :after {
-    box-sizing: border-box;
-}
-::-webkit-scrollbar {
-    scrollbar-width: thin;
-    background-color: #0000;
-    border-radius: 10px;
-    width: 5px;
-    height: 5px;
-}
-::-webkit-scrollbar-thumb {
-    display: none;
-}
-::-webkit-scrollbar-track {
-    scrollbar-width: thin;
-    background-color: #0000;
-}
-box-sizing border-box
-display block
-font-family "IBM Plex Sans", sans-serif
-font-size 10px
-height 341.429px
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dollar Printers Dashboard</title>
+  <style>
+    body {
+      background: #0b1234;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      justify-content: center;
+    }
+    .dashboard-container {
+      background: #1a234a;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #1a234a;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+    h1 {
+      color: #3b82f6;
+      margin-bottom: 0.25rem;
+    }
+    p {
+      margin-top: 0;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+      color: #a0a0a0;
+    }
+    .avatar {
+      background: #3b82f6;
+      color: white;
+      font-weight: bold;
+      font-size: 3rem;
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1rem;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;user-select: none;
+    }
+    .btn-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+    a.button {
+      background: #3b82f6;
+      color: white;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      flex: 1;
+      margin: 0 0.25rem;
+      transition: background 0.3s ease;
+    }
+    a.button:hover {
+      background: #2563eb;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    button.grid-button {
+      background: #2a3672;
+      border: none;
+      color: #cbd5e1;
+      padding: 15px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button.grid-button:hover {
+      background: #3b4a9e;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-container">
+    <div class="avatar">DP</div>
+    <h1>Dashboard</h1>
+    <p>Welcome to Dollar Printers Trading Hub</p>
+    <div class="btn-row">
+      <a href="https://oauth.deriv.com/oauth2/authorize?app_id=80373&redirect_uri=https://dollarprinterstool.github.io/deriv-site/connected.html&response_type=token" class="button" target="_blank" rel="noopener">Log In</a><a href="https://oauth.deriv.com/oauth2/authorize?app_id=80373&redirect_uri=https://dollarprinterstool.github.io/deriv-site/connected.html&response_type=token" class="button" target="_blank" rel="noopener">Sign Up</a>
+    </div>
+    <div class="grid">
+      <button class="grid-button" onclick="alert('Local Bot feature coming soon!')">Local Bot</button>
+      <button class="grid-button" onclick="alert('Google Drive feature coming soon!')">Google Drive</button>
+      <button class="grid-button" onclick="alert('Bot Builder feature coming soon!')">Bot Builder</button>
+      <button class="grid-button" onclick="alert('Quick Strategy feature coming soon!')">Quick Strategy</button>
+    </div>
+  </div>
+</body>
+    </html>
