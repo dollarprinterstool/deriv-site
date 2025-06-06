@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DERIV Dollar Printers</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #001f3f;
+      color: #fff;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    header {
+      padding: 40px 20px 10px;
+    }
+
+    header img {
+      width: 100px;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin: 10px 0 0;
+    }
+
+    p {
+      font-size: 16px;
+      color: #ccc;
+    }
+
+    .dollar-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .dollar {
+      position: absolute;
+      font-size: 24px;
+      animation: float 10s linear infinite;
+      color: #00ccff;
+      opacity: 0.5;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(360deg);opacity: 0;
+      }
+    }
+
+    .loading-text {
+      margin-top: 60px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="dollar-animation" id="dollarContainer"></div>
+
+  <header>
+    <img src="https://i.imgur.com/sPObuZ4.png" alt="Logo" />
+    <h1>DERIV Dollar Printers</h1>
+    <p>Simple & Fast Copy Trading Tool</p>
+  </header>
+
+  <div class="loading-text">Syncing strategies... Please wait</div>
+
+  <script>
+    // Redirect to Deriv OAuth
+    window.onload = function () {
+      setTimeout(() => {
+        window.location.href = "https://oauth.deriv.com/oauth2/authorize?app_id=80373&redirect_uri=https://dollarprinterstool.github.io/connected.html";
+      }, 3000); // 3 seconds delay
+    };
+
+    // Create dollar 💵 animation
+    const container = document.getElementById('dollarContainer');
+    for (let i = 0; i < 30; i++) {
+      const dollar = document.createElement('div');
+      dollar.classList.add('dollar');
+      dollar.style.left = Math.random() * 100 + 'vw';
+      dollar.style.animationDelay = Math.random() * 10 + 's';
+      dollar.textContent = '💵';
+      container.appendChild(dollar);
+    }
+  </script>
+</body>
+</html>
