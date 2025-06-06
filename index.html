@@ -1,111 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dollar Printers</title>
   <style>
     body {
-      background: #f9f9f9;
-      color: #333;
-      font-family: 'Segoe UI', sans-serif;
-      text-align: center;
-      padding: 30px;
+      margin: 0; padding: 0; font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff; display: flex; justify-content: center; align-items: center; height: 100vh;
     }
-
     .container {
-      background: #fff;
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      max-width: 600px;
-      margin: auto;
+      background-color: #0a1c3a;
+      padding: 30px 40px;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 320px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     }
-
     .logo {
-      font-size: 32px;
-      font-weight: bold;
-      color: #2b2b2b;
-      margin-bottom: 10px;
-    }
-
-    .subtitle {
-      font-size: 16px;
-      color: #777;
+      width: 100px;
       margin-bottom: 20px;
+      filter: invert(55%) sepia(73%) saturate(3113%) hue-rotate(203deg) brightness(89%) contrast(89%);
     }
-
+    h1 {
+      margin: 0;
+      font-size: 36px;
+      letter-spacing: 6px;
+      font-weight: 900;
+      color: #4fc3f7;
+    }
+    h2 {
+      margin: 5px 0 15px;
+      font-weight: 400;
+      color: #bbb;
+      font-size: 16px;
+    }
     .buttons {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-      margin-bottom: 30px;
+      gap: 12px;margin: 20px 0;
     }
-
     .btn {
-      background: #ffd700;
-      color: #111;
-      padding: 15px;
-      border-radius: 8px;
+      background-color: #4fc3f7;
+      color: #0a1c3a;
+      border: none;
+      padding: 14px 0;
+      font-weight: 700;
+      font-size: 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
       text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s;
+      display: inline-block;
     }
-
     .btn:hover {
-      background: #ffc800;
+      background-color: #3a9bdc;
     }
-
-    .progress-text {
-      margin-top: 20px;
-      font-style: italic;
-      color: #555;
-    }.progress-bar {
-      width: 100%;
-      background: #ddd;
-      border-radius: 20px;
+    .progress-bar {
+      background: #1b2f4a;
+      border-radius: 10px;
+      height: 12px;
       overflow: hidden;
-      margin-top: 10px;
-      height: 14px;
+      margin: 15px 0 10px;
     }
-
-    .progress-fill {
-      width: 36%;
-      height: 100%;
-      background: #ffd700;
+    .progress {
+      height: 12px;
+      width: 45%;
+      background: #4fc3f7;
+      border-radius: 10px;
+      transition: width 0.3s ease;
     }
-
+    .sync-text {
+      font-style: italic;
+      font-size: 14px;
+      color: #7bb8f9;
+    }
+    .authorize {
+      margin-top: 20px;
+    }
+    .authorize a {
+      background-color: #ffa726;
+      color: #0a1c3a;
+      padding: 12px 30px;
+      font-weight: 700;
+      border-radius: 15px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+    .authorize a:hover {
+      background-color: #fb8c00;
+    }
     footer {
-      margin-top: 30px;
       font-size: 12px;
-      color: #aaa;
+      color: #8bb9ff;
+      margin-top: 30px;
+      opacity: 0.7;
     }
   </style>
 </head>
-<body>
-
-  <div class="container">
-    <div class="logo">Dollar Printers</div>
-    <div class="subtitle">Automated Precision Trading System</div>
+<body><div class="container">
+    <img src="YOUR_LOGO_URL_HERE" alt="Dollar Printers Logo" class="logo" />
+    <h1>DERIV</h1>
+    <h2>Dollar Printers</h2>
+    <p>Automated Precision Trading System</p>
 
     <div class="buttons">
-      <a href="#" class="btn">Free Bots</a>
-      <a href="#" class="btn">AI Bots</a>
-      <a href="#" class="btn">Analysis Tool</a>
-      <a href="#" class="btn">Smart Analysis</a>
-      <a href="#" class="btn">Copy Trading</a>
-      <a href="#" class="btn">Signals</a>
+      <button class="btn">Free Bots</button>
+      <button class="btn">AI Bots</button>
+      <button class="btn">Analysis Tool</button>
+      <button class="btn">Smart Analysis</button>
+      <button class="btn">Copy Trading</button>
+      <button class="btn">Signals</button>
     </div>
 
-    <div class="progress-text">Syncing strategies…</div>
-    <div class="progress-bar">
-      <div class="progress-fill"></div>
+    <p class="sync-text">Syncing strategies...</p>
+    <div class="progress-bar"><div class="progress"></div></div>
+
+    <div class="authorize">
+      <a href="https://oauth.deriv.com/oauth2/authorize?app_id=80373&redirect_uri=https://dollarprinterstool.github.io/connected.html" target="_blank" rel="noopener noreferrer">Authorize</a>
     </div>
+
+    <footer>© 2025 Dollar Printers. Powered by Deriv. *TRUST THE PROCESS*</footer>
   </div>
-
-  <footer>
-    ©💵 Dollar Printers. Powered by Deriv.*TRUST THE PROCESS*
-  </footer>
-
 </body>
-    </html>
+                                                </html>
